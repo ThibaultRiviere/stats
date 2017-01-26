@@ -22,3 +22,7 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+ # File from coverage
+cover.out
+coverage.html
