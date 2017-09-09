@@ -1,7 +1,7 @@
 package stats
 
-// Average gets the number expressing the central or typical value in a set of data
-func Average(datas []float64) float64 {
+// Mean gets the number expressing the central or typical value in a set of data
+func Mean(datas []float64) float64 {
 	length := len(datas)
 	if length == 0 {
 		return 0
