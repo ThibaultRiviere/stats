@@ -39,3 +39,8 @@ func StdDev(datas []float64) float64 {
 func BesselStdDev(datas []float64) float64 {
 	return math.Sqrt(BesselVariance(datas))
 }
+
+// SE (standard error) is the standard deviation of its sampling distribution
+func SE(stddev float64, n int) float64 {
+	return stddev / math.Sqrt(float64(n))
+}

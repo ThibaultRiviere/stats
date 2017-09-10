@@ -29,6 +29,12 @@ func testBesselStdDev(name string, datas []float64, expected float64) {
 	})
 }
 
+func testSE(name string, stddev float64, n int, expected float64) {
+	Convey(name, func() {
+		So(SE(stddev, n), ShouldEqual, expected)
+	})
+}
+
 func TestVariance(t *testing.T) {
 	Convey("Testing Bessel Variance", t, func() {
 		var ret float64
@@ -102,5 +108,23 @@ func TestBesselStdDev(t *testing.T) {
 		ret = float64(0)
 		datas = []float64{1, 1, 1, 1}
 		testBesselStdDev("with no stddev", datas, ret)
+	})
+}
+
+func TestSE(t *testing.T) {
+	Convey("Testing standard Error", t, func() {
+		var ret float64
+		var stddev float64
+		var n int
+
+		ret = 1.
+		stddev = 1.
+		n = 1
+		testSE("should be equal to 1", stddev, n, ret)
+
+		ret = 10
+		stddev = 100
+		n = 100
+		testSE("should be equal to 10", stddev, n, ret)
 	})
 }
