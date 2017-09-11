@@ -4,9 +4,3 @@ package stats
 func ZScore(x, avg, stddev float64) float64 {
 	return (x - avg) / stddev
 }
-
-// ZScoreFromData will compute the mean and the stddev before computing
-// the zscore
-func ZScoreFromData(datas []float64, x float64) float64 {
-	return ZScore(x, Mean(datas), StdDev(datas))
-}
