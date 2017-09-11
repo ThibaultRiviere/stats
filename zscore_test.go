@@ -5,13 +5,13 @@ import (
 	"testing"
 )
 
-func testZscore(name string, x float64, avg float64, stddev float64, expected float64) {
+func testZscore(name string, x, avg, stddev, expected float64) {
 	Convey(name, func() {
 		So(ZScore(x, avg, stddev), ShouldEqual, expected)
 	})
 }
 
-func testZscoreFromData(name string, datas []float64, x float64, expected float64) {
+func testZscoreFromData(name string, datas []float64, x, expected float64) {
 	Convey(name, func() {
 		So(ZScoreFromData(datas, x), ShouldEqual, expected)
 	})
