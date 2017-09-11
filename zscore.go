@@ -1,7 +1,7 @@
 package stats
 
 // Zscore is the distance from the mean in stddev
-func ZScore(x float64, avg float64, stddev float64) float64 {
+func ZScore(x, avg, stddev float64) float64 {
 	return (x - avg) / stddev
 }
 
