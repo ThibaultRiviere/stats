@@ -2,6 +2,7 @@ package stats
 
 import (
 	. "github.com/smartystreets/goconvey/convey"
+	"math"
 	"testing"
 )
 
@@ -30,6 +31,9 @@ func TestMedian(t *testing.T) {
 				1.3,
 			},
 		}
+		Convey("with no value", func() {
+			So(true, ShouldEqual, math.IsNaN(Median([]float64{})))
+		})
 		for _, test := range tests {
 			testData(test, Median)
 		}
