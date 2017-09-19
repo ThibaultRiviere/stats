@@ -63,6 +63,7 @@ func TestPDF(t *testing.T) {
 			intervalTest{"for 68%", -1, 1, 0, 1, 0.6826894921370859},
 			intervalTest{"for 95%", -1.96, 1.96, 0, 1, 0.9500042097035593},
 			intervalTest{"for ~100% ", -5, 5, 0, 1, 0.9999994266968564},
+			intervalTest{"for ~100% revert", 5, -5, 0, 1, 0.9999994266968564},
 		}
 		for _, test := range tests {
 			testInterval(test, ProbabilityBetween)
@@ -74,6 +75,7 @@ func TestPDF(t *testing.T) {
 			intervalNormalizeTest{"for 68%", -1, 1, 0.6826894921370859},
 			intervalNormalizeTest{"for 95%", -1.96, 1.96, 0.9500042097035593},
 			intervalNormalizeTest{"for ~100% ", -5, 5, 0.9999994266968564},
+			intervalNormalizeTest{"for ~100% revert", 5, -5, 0.9999994266968564},
 		}
 		for _, test := range tests {
 			testNormalizeInterval(test, NormalProbabilityBetween)
